@@ -1,0 +1,115 @@
+.card {
+  display: grid;
+  gap: 18px;
+  height: 100%;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 249, 252, 0.96));
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-6px);
+  border-color: var(--border-strong);
+  box-shadow: 0 22px 40px rgba(15, 39, 71, 0.12);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(239, 244, 250, 0.96));
+}
+
+.header {
+  display: grid;
+  gap: 10px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.summary {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.detailList {
+  display: grid;
+  gap: 14px;
+}
+
+.detail {
+  display: grid;
+  gap: 6px;
+}
+
+.detailLabel {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: var(--text-muted);
+}
+
+.detailText {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 0.92rem;
+}
+
+.linkRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.textButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  font-size: 0.94rem;
+  font-weight: 700;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.textButton:hover,
+.textButton:focus-visible {
+  color: #0f2747;
+  transform: translateX(2px);
+}
+
+.textButton::after {
+  content: " ->";
+}
