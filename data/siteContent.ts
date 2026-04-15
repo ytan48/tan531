@@ -4,7 +4,7 @@ export const siteContent: SiteContent = {
   profile: {
     name: "Yujian Tan",
     role: "Aspiring Data Scientist and Data Analyst",
-    headline: "Uncovering Insights from Data.",
+    headline: "Uncovering Insights from Data",
     shortBio:
       "Transforming complex datasets into clear, actionable stories that support better business decisions and measurable performance improvement.",
     email: "ytan48@illinois.edu",
@@ -45,6 +45,7 @@ export const siteContent: SiteContent = {
       "Python",
       "R",
       "SQL",
+      "Tableau",
       "Machine Learning",
       "Data Visualization",
       "Statistical Analysis / Modeling",
@@ -59,9 +60,17 @@ export const siteContent: SiteContent = {
   education: [
     {
       institution: "University of Illinois Urbana-Champaign",
-      degree: "B.S. in Statistics",
-      minor: "Minor in Data Science",
+      degree: "Bachelor of Science in Statistics",
+      minor: "Data Science minor",
       graduation: "Expected May 2027",
+      coursework: [
+        "Statistical Modeling",
+        "Machine Learning",
+        "Data Visualization",
+        "Data Science",
+        "Probability",
+        "Statistical Computing",
+      ],
     },
   ],
   experience: [
@@ -75,7 +84,7 @@ export const siteContent: SiteContent = {
     },
     {
       role: "Program Assistant Intern",
-      organization: "Coalition for a Better Chinese American Community",
+      organization: "Coalition for a Better Chinese American Community (CBCAC)",
       period: "June, 2025 - August, 2025",
       location: "Chicago, IL | On-site",
       summary: "",
@@ -122,7 +131,7 @@ export const siteContent: SiteContent = {
       organization: "Data Science Club",
       period: "August, 2025 - Present",
       description:
-        "Club involvement focused on machine learning, Scikit-learn, pandas, and Python.",
+        "Led a Data Dive team in a credit risk analytics engagement focused on identifying country-level credit overheating risk in a global macro-risk monitoring context. Club involvement focused on machine learning, Scikit-learn, pandas, and Python.",
     },
     {
       title: "Datathon Participant",
@@ -273,7 +282,7 @@ export const siteContent: SiteContent = {
     },
     {
       label: "LinkedIn",
-      value: "www.linkedin.com/in/yujian531",
+      value: "linkedin.com/in/yujian531",
       href: "https://www.linkedin.com/in/yujian531",
     },
     {

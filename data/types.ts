@@ -31,6 +31,7 @@ export type EducationItem = {
   degree: string;
   minor?: string;
   graduation: string;
+  coursework?: string[];
 };
 
 export type ProjectItem = {

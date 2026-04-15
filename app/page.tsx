@@ -144,10 +144,6 @@ export default function Home() {
                 <span className={styles.eyebrow}>Education</span>
                 <h2 className={styles.sectionTitle}>Academic foundation in statistics and data science.</h2>
               </div>
-              <p className={styles.sectionDescription}>
-                Current academic background and degree information relevant to analytics
-                and data science roles.
-              </p>
             </div>
 
             <div className={styles.educationGrid}>
@@ -162,6 +158,18 @@ export default function Home() {
                   <p className={styles.educationDegree}>{item.degree}</p>
                   {item.minor ? (
                     <p className={styles.educationMinor}>{item.minor}</p>
+                  ) : null}
+                  {item.coursework?.length ? (
+                    <div className={styles.educationDetails}>
+                      <span className={styles.educationLabel}>Relevant Coursework</span>
+                      <div className={styles.educationCoursework}>
+                        {item.coursework.map((course) => (
+                          <span key={course} className={styles.courseworkChip}>
+                            {course}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   ) : null}
                 </FadeInSection>
               ))}
@@ -265,9 +273,6 @@ export default function Home() {
           </FadeInSection>
         </div>
 
-        <footer className={styles.footer}>
-          Built for GitHub Pages with a single content file for quick updates.
-        </footer>
       </div>
       <ScrollToTopButton />
     </main>

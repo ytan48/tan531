@@ -103,8 +103,9 @@
 
 .timelineSummary {
   margin: 0;
-  color: var(--text-secondary);
-  line-height: 1.75;
+  color: var(--text-reading);
+  font-size: 1rem;
+  line-height: 1.8;
   overflow-wrap: anywhere;
 }
 
@@ -113,11 +114,12 @@
   gap: 10px;
   margin: 4px 0 0;
   padding-left: 18px;
-  color: var(--text-secondary);
+  color: var(--text-reading);
 }
 
 .highlightItem {
-  line-height: 1.7;
+  font-size: 0.98rem;
+  line-height: 1.78;
   overflow-wrap: anywhere;
 }
 

@@ -17,19 +17,50 @@
   position: sticky;
   top: 16px;
   z-index: 10;
+  isolation: isolate;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding: 14px 18px;
-  border: 1px solid rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.68);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.84);
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.72));
+  backdrop-filter: blur(34px) saturate(190%);
+  -webkit-backdrop-filter: blur(34px) saturate(190%);
   box-shadow:
-    0 16px 36px rgba(15, 39, 71, 0.09),
-    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+    0 18px 40px rgba(15, 39, 71, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.nav::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.72), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.05));
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.nav::after {
+  content: "";
+  position: absolute;
+  inset: auto 14px 8px 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+
+.nav > * {
+  position: relative;
+  z-index: 1;
 }
 
 .brandBlock {
@@ -60,9 +91,9 @@
 .navLink {
   padding: 10px 14px;
   border-radius: 999px;
-  color: rgba(15, 39, 71, 0.84);
+  color: rgba(15, 39, 71, 0.96);
   font-size: 0.94rem;
-  font-weight: 500;
+  font-weight: 600;
   transition:
     background-color 160ms ease,
     color 160ms ease,
@@ -71,7 +102,7 @@
 
 .navLink:hover,
 .navLink:focus-visible {
-  background: var(--surface-muted);
+  background: rgba(255, 255, 255, 0.42);
   color: var(--text-primary);
   transform: translateY(-1px);
 }
@@ -142,9 +173,9 @@
 .subtitle {
   max-width: 32ch;
   margin: 0;
-  color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.75;
+  color: var(--text-reading);
+  font-size: 1.04rem;
+  line-height: 1.8;
 }
 
 .ctaRow {
@@ -358,40 +389,46 @@
 
 .activityTitle {
   margin: 0;
-  font-size: 1.28rem;
+  font-size: 1.18rem;
   line-height: 1.2;
   letter-spacing: -0.03em;
 }
 
 .activityOrg {
   margin: 0;
-  color: var(--text-muted);
-  font-weight: 700;
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .activityDescription {
   margin: 0;
-  color: var(--text-secondary);
-  line-height: 1.75;
+  color: var(--text-reading);
+  font-size: 1rem;
+  line-height: 1.8;
 }
 
 .activitiesGrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 20px;
+  align-items: start;
+}
+
+.activitiesGrid > :first-child {
+  grid-column: 1 / -1;
 }
 
 .activityCard {
   position: relative;
   overflow: hidden;
   display: grid;
-  gap: 10px;
-  padding: 24px;
+  gap: 12px;
+  padding: 22px 22px 20px;
   border: 1px solid rgba(15, 39, 71, 0.08);
-  border-radius: var(--radius-md);
+  border-radius: 18px;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(249, 251, 254, 0.96));
-  box-shadow: 0 12px 26px rgba(15, 39, 71, 0.05);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(248, 251, 255, 0.96));
+  box-shadow: 0 10px 24px rgba(15, 39, 71, 0.045);
   transition:
     transform 220ms ease,
     box-shadow 220ms ease,
@@ -401,17 +438,17 @@
 
 .activityCard::before {
   content: "";
-  width: 42px;
-  height: 3px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent), rgba(23, 58, 102, 0.2));
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, rgba(23, 58, 102, 0.95), rgba(23, 58, 102, 0.22));
 }
 
 .activityCard:hover,
 .activityCard:focus-within {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   border-color: var(--border-strong);
-  box-shadow: 0 20px 38px rgba(15, 39, 71, 0.1);
+  box-shadow: 0 16px 32px rgba(15, 39, 71, 0.08);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(239, 244, 250, 0.96));
 }
@@ -472,8 +509,9 @@
 .sectionDescription {
   max-width: 48ch;
   margin: 14px 0 0;
-  color: var(--text-secondary);
-  line-height: 1.75;
+  color: var(--text-reading);
+  font-size: 1.02rem;
+  line-height: 1.82;
 }
 
 .aboutGrid {
@@ -496,8 +534,8 @@
 
 .aboutParagraph {
   margin: 0;
-  color: var(--text-secondary);
-  font-size: 1rem;
+  color: var(--text-reading);
+  font-size: 1.04rem;
   line-height: 1.8;
 }
 
@@ -637,8 +675,43 @@
 .educationDegree,
 .educationMinor {
   margin: 0;
-  color: var(--text-secondary);
+  color: var(--text-reading);
   line-height: 1.75;
+}
+
+.educationDetails {
+  display: grid;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.educationLabel {
+  color: var(--text-primary);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.educationCoursework {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.courseworkChip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(15, 39, 71, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 .projectsGrid {
@@ -740,19 +813,20 @@
   font-weight: 700;
 }
 
-.footer {
-  padding: 28px 0 12px;
-  color: var(--text-muted);
-  font-size: 0.92rem;
-}
-
 @media (max-width: 1080px) {
   .hero,
   .aboutGrid,
-  .activitiesGrid,
   .contactCard,
   .projectsGrid {
     grid-template-columns: 1fr;
+  }
+
+  .activitiesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .activitiesGrid > :first-child {
+    grid-column: auto;
   }
 
   .competencyPanel {

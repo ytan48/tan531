@@ -5,8 +5,9 @@
   --border: rgba(15, 39, 71, 0.12);
   --border-strong: rgba(15, 39, 71, 0.2);
   --text-primary: #0f2747;
-  --text-secondary: #4d617a;
-  --text-muted: #70839b;
+  --text-secondary: #3f5874;
+  --text-reading: #34506e;
+  --text-muted: #657a93;
   --accent: #173a66;
   --accent-soft: #d8e4f2;
   --shadow-soft: 0 18px 50px rgba(15, 39, 71, 0.08);
@@ -23,6 +24,7 @@
 
 html {
   scroll-behavior: smooth;
+  zoom: 1.05;
 }
 
 body {
