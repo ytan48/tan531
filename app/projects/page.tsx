@@ -48,26 +48,28 @@ export default function ProjectsPage() {
           </div>
         </section>
 
-        <section className={styles.section}>
-          <FadeInSection className={styles.sectionHeader}>
-            <div>
-              <span className={styles.eyebrow}>More work</span>
-              <h2 className={styles.sectionTitle}>Additional projects to explore.</h2>
-            </div>
-          </FadeInSection>
+        {moreProjects.length > 0 ? (
+          <section className={styles.section}>
+            <FadeInSection className={styles.sectionHeader}>
+              <div>
+                <span className={styles.eyebrow}>More work</span>
+                <h2 className={styles.sectionTitle}>Additional projects to explore.</h2>
+              </div>
+            </FadeInSection>
 
-          <div className={styles.grid}>
-            {moreProjects.map((project, index) => (
-              <FadeInSection
-                key={project.title}
-                delayMs={index * 90}
-                className={styles.cardReveal}
-              >
-                <ProjectCard project={project} />
-              </FadeInSection>
-            ))}
-          </div>
-        </section>
+            <div className={styles.grid}>
+              {moreProjects.map((project, index) => (
+                <FadeInSection
+                  key={project.title}
+                  delayMs={index * 90}
+                  className={styles.cardReveal}
+                >
+                  <ProjectCard project={project} />
+                </FadeInSection>
+              ))}
+            </div>
+          </section>
+        ) : null}
       </div>
     </main>
   );

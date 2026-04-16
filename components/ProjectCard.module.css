@@ -24,6 +24,256 @@
     linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(239, 244, 250, 0.96));
 }
 
+.preview {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: 16px;
+  min-height: 168px;
+  padding: 18px;
+  border: 1px solid rgba(15, 39, 71, 0.06);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.72), transparent 28%),
+    linear-gradient(180deg, rgba(247, 250, 254, 0.98), rgba(240, 245, 251, 0.96));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.52),
+    0 12px 28px rgba(15, 39, 71, 0.05);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.card:hover .preview,
+.card:focus-within .preview {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.56),
+    0 16px 32px rgba(15, 39, 71, 0.08);
+}
+
+.previewImageFrame {
+  position: relative;
+  overflow: hidden;
+  min-height: 168px;
+  border: 1px solid rgba(15, 39, 71, 0.06);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.44), transparent 26%),
+    linear-gradient(180deg, rgba(247, 250, 254, 0.98), rgba(240, 245, 251, 0.96));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.52),
+    0 12px 28px rgba(15, 39, 71, 0.05);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.card:hover .previewImageFrame,
+.card:focus-within .previewImageFrame {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.56),
+    0 16px 32px rgba(15, 39, 71, 0.08);
+}
+
+.previewImage {
+  object-fit: cover;
+}
+
+.preview::after {
+  content: "";
+  position: absolute;
+  inset: auto -28px -38px auto;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+
+.previewTopRow,
+.previewMetricRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.previewBadge,
+.previewPill,
+.previewPillShort,
+.previewMetric,
+.previewMetricWide,
+.previewBar,
+.previewLine {
+  display: block;
+}
+
+.previewBadge {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--preview-accent, #2e6cb6);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.28);
+}
+
+.previewPill,
+.previewPillShort,
+.previewMetric,
+.previewMetricWide {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.previewPill {
+  width: 78px;
+}
+
+.previewPillShort {
+  width: 54px;
+}
+
+.previewMetric {
+  width: 48px;
+  height: 34px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.54);
+}
+
+.previewMetricWide {
+  width: 86px;
+  height: 34px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.previewChart {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: end;
+  gap: 10px;
+  min-height: 76px;
+  margin-top: auto;
+}
+
+.previewBar {
+  border-radius: 10px 10px 0 0;
+  background: linear-gradient(180deg, var(--preview-accent-soft, #8cb4df), var(--preview-accent, #2e6cb6));
+  opacity: 0.92;
+}
+
+.previewBarOne {
+  height: 38%;
+}
+
+.previewBarTwo {
+  height: 72%;
+}
+
+.previewBarThree {
+  height: 56%;
+}
+
+.previewBarFour {
+  height: 86%;
+}
+
+.previewLine {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  top: 24px;
+  height: 44px;
+  border-radius: 999px;
+  opacity: 0.75;
+  background:
+    linear-gradient(135deg, transparent 20%, var(--preview-line, rgba(255, 255, 255, 0.82)) 22%, transparent 24%),
+    linear-gradient(125deg, transparent 44%, var(--preview-line, rgba(255, 255, 255, 0.82)) 46%, transparent 48%),
+    linear-gradient(118deg, transparent 67%, var(--preview-line, rgba(255, 255, 255, 0.82)) 69%, transparent 71%);
+}
+
+.variantDashboard {
+  --preview-accent: #2f6db7;
+  --preview-accent-soft: #8fb8e0;
+  --preview-line: rgba(255, 255, 255, 0.84);
+}
+
+.variantForecast {
+  --preview-accent: #3f759f;
+  --preview-accent-soft: #9bb8cf;
+  --preview-line: rgba(255, 255, 255, 0.88);
+}
+
+.variantForecast .previewBarOne {
+  height: 44%;
+}
+
+.variantForecast .previewBarTwo {
+  height: 58%;
+}
+
+.variantForecast .previewBarThree {
+  height: 74%;
+}
+
+.variantForecast .previewBarFour {
+  height: 90%;
+}
+
+.variantModel {
+  --preview-accent: #255d9d;
+  --preview-accent-soft: #7ea8d6;
+  --preview-line: rgba(255, 255, 255, 0.86);
+}
+
+.variantModel .previewBarOne {
+  height: 34%;
+}
+
+.variantModel .previewBarTwo {
+  height: 84%;
+}
+
+.variantModel .previewBarThree {
+  height: 62%;
+}
+
+.variantModel .previewBarFour {
+  height: 76%;
+}
+
+.variantText {
+  --preview-accent: #5b71b2;
+  --preview-accent-soft: #a0afe2;
+  --preview-line: rgba(255, 255, 255, 0.82);
+}
+
+.variantText .previewMetric {
+  width: 60px;
+}
+
+.variantText .previewMetricWide {
+  width: 70px;
+}
+
+.variantText .previewBarOne {
+  height: 28%;
+}
+
+.variantText .previewBarTwo {
+  height: 46%;
+}
+
+.variantText .previewBarThree {
+  height: 40%;
+}
+
+.variantText .previewBarFour {
+  height: 54%;
+}
+
 .header {
   display: grid;
   gap: 10px;

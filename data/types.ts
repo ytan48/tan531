@@ -37,6 +37,7 @@ export type EducationItem = {
 export type ProjectItem = {
   title: string;
   summary: string;
+  previewImage?: string;
   problem: string;
   approach: string;
   outcome: string;

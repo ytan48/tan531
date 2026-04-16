@@ -36,7 +36,7 @@ export const siteContent: SiteContent = {
   },
   about: {
     intro:
-      "My name is Yujian Tan (Pronounced: YOO-jyen Tahn), and I am a Statistics student at the University of Illinois Urbana-Champaign focused on analysis, modeling, and clear communication.",
+      "My name is Yujian Tan, and I am a Statistics student at the University of Illinois Urbana-Champaign focused on analysis, modeling, and clear communication.",
     paragraphs: [
       "My work is centered on data analysis, statistical modeling, machine learning, and data visualization.",
       "I am good at turning analytical results into explanations that non-technical stakeholders can understand.",
@@ -46,8 +46,8 @@ export const siteContent: SiteContent = {
       "R",
       "SQL",
       "Tableau",
+      "R Shiny",
       "Machine Learning",
-      "Data Visualization",
       "Statistical Analysis / Modeling",
     ],
     principles: [
@@ -76,7 +76,7 @@ export const siteContent: SiteContent = {
   experience: [
     {
       role: "Data Analyst Intern",
-      organization: "IDX Exchange",
+      organization: "IDXExchange",
       period: "March, 2026 - Present",
       location: "Champaign, IL | Remote",
       summary: "",
@@ -150,126 +150,79 @@ export const siteContent: SiteContent = {
   ],
   featuredProjects: [
     {
-      title: "Customer Churn Risk Modeling",
+      title: "Real-Time Pitch Type Classification for MLB Broadcast",
       summary:
-        "An end-to-end churn analysis that prioritized outreach based on customer behavior, contract patterns, and service usage.",
+        "Built a proof-of-concept real-time pitch-type classifier for MLB broadcast overlays using Statcast pitch tracking data for a per-pitcher model focused on Kevin Gausman.",
       problem:
-        "The retention team had no reliable way to identify which customers were most likely to leave in the next billing cycle.",
+        "Broadcast overlays need fast, pitcher-specific pitch type predictions that can support real-time on-air usage.",
       approach:
-        "Built a feature set in SQL, trained an interpretable classification model in Python, and paired outputs with a simple risk segmentation dashboard.",
+        "Implemented a scikit-learn pipeline with imputation, scaling, and one-hot encoding, then tuned a KNN model with stratified cross-validation and grid search on a time-based 2025 holdout set.",
       outcome:
-        "Created a ranked intervention list and a reusable scoring workflow that helped the team focus retention efforts on the highest-risk accounts.",
-      tags: ["Python", "SQL", "Scikit-learn", "Feature Engineering"],
+        "Achieved 0.985 accuracy and used a normalized confusion matrix to identify class-specific errors and define conservative deployment rules for broadcast use.",
+      tags: ["Data Science", "Python", "Scikit-learn", "KNN"],
       links: [
         {
           label: "GitHub repository",
-          href: "https://github.com/your-username/customer-churn-model",
-        },
-        {
-          label: "Case study",
-          href: "https://your-case-study-link.example.com/churn",
+          href: "https://github.com/ytan48/Machine-Learning-miniProjects/tree/main/MLB%20Pitch%20Type%20Classification",
         },
       ],
     },
     {
-      title: "Revenue Forecasting and Scenario Planning",
+      title: "Credit Overheating Early-Warning Model",
       summary:
-        "A forecasting project designed to help finance and operations teams plan with clearer revenue expectations.",
+        "Built an end-to-end early-warning classifier on a 25-year BIS credit dataset to flag above-trend credit growth and produce country-level risk scoring.",
       problem:
-        "Leadership needed a more stable forecasting process than spreadsheet-based estimates and ad hoc assumptions.",
+        "Credit risk monitoring needed a structured way to flag overheating markets and prioritize deeper review at the country level.",
       approach:
-        "Compared baseline time-series methods, created scenario bands for best and conservative cases, and surfaced assumptions in an executive-facing dashboard.",
+        "Conducted rigorous EDA and data QA by removing aggregate regions, resolving valuation-method inconsistencies, and validating long-run credit dynamics across sectors before model development.",
       outcome:
-        "Delivered a repeatable reporting cadence with clearer confidence ranges and better alignment between planning and actual business performance.",
-      tags: ["Forecasting", "Python", "Time Series", "Power BI"],
+        "Produced country-level risk scoring and stakeholder-friendly visual outputs, including a country risk map, with model performance reaching an AUC of 0.69.",
+      previewImage: "/projects/BIS.png",
+      tags: ["Python", "Pandas", "Scikit-learn", "Data Cleaning", "EDA", "Data Visualization"],
       links: [
         {
           label: "GitHub repository",
-          href: "https://github.com/your-username/revenue-forecasting",
+          href: "https://github.com/ytan48/BIS-Warning-Model",
         },
       ],
     },
     {
-      title: "Executive KPI Command Center",
+      title: "U.S. MSA House Price Index Dashboard",
       summary:
-        "A modern operations dashboard that consolidated product, sales, and service metrics into one decision-friendly reporting layer.",
+        "Developed an interactive R Shiny dashboard to explore quarterly House Price Index trends across more than 400 U.S. metro areas from 2000 to the present.",
       problem:
-        "Stakeholders were pulling metrics from multiple tools, leading to inconsistent definitions and delayed reporting cycles.",
+        "Housing market analysis needed a faster way to compare price trends across states and metro areas without manual filtering.",
       approach:
-        "Modeled a lightweight analytics layer, standardized KPI definitions, and designed a minimal dashboard focused on weekly decision signals.",
+        "Built a clean analysis dataset with tidyverse, engineered time features, standardized state and metro identifiers, and implemented reactive UI filters for state, metro area, and year range.",
       outcome:
-        "Reduced reporting friction and gave leadership a single place to track trend movement, investigate anomalies, and align on follow-up actions.",
-      tags: ["Dashboarding", "dbt", "SQL", "Power BI"],
+        "Enabled reliable market trend comparisons with linked time-series plots and a drilldown table for validation in a single dashboard.",
+      previewImage: "/projects/MSA.png",
+      tags: ["R Shiny", "Dashboard", "tidyverse"],
       links: [
-        {
-          label: "GitHub repository",
-          href: "https://github.com/your-username/executive-kpi-dashboard",
-        },
         {
           label: "Live dashboard",
-          href: "https://your-dashboard-link.example.com/",
+          href: "https://ytan48.shinyapps.io/Interactive-FHFA-House-Price-Index-Dashboard/",
+        },
+        {
+          label: "GitHub repository",
+          href: "https://github.com/ytan48/Interactive-FHFA-House-Price-Index-Dashboard",
         },
       ],
     },
   ],
   moreProjects: [
     {
-      title: "Marketing Funnel Conversion Audit",
+      title: "2026 Datathon Intraday Contact Center Demand Forecasting",
       summary:
-        "A funnel analytics review that mapped drop-off points across acquisition, trial activation, and subscription conversion.",
+        "Developed a Python-based forecasting pipeline in AWS SageMaker AI to predict 30-minute call volume, abandon rate, and customer care time across four portfolios.",
       problem:
-        "Growth stakeholders could see top-line conversion trends but could not isolate where the funnel was breaking down for specific channels and cohorts.",
+        "The datathon problem required interval-level forecasts that could support staffing, scheduling, and contact center operations planning.",
       approach:
-        "Built a cohort-based SQL model, benchmarked stage-by-stage conversion by channel, and translated the findings into a concise optimization backlog.",
+        "Cleaned and merged multi-sheet Excel and CSV operational data, engineered calendar, lag, and rolling-window features, and built regularized scikit-learn regression pipelines with imputation, scaling, and target transformation.",
       outcome:
-        "Highlighted the largest activation bottleneck and gave the growth team a prioritized list of experiments tied to measurable conversion lift.",
-      tags: ["SQL", "Funnel Analysis", "Cohort Analysis", "Experimentation"],
-      links: [
-        {
-          label: "GitHub repository",
-          href: "https://github.com/your-username/funnel-conversion-audit",
-        },
-      ],
-    },
-    {
-      title: "Retail Demand Forecasting Dashboard",
-      summary:
-        "A planning workflow that combined historical sales patterns with operational reporting for inventory decisions.",
-      problem:
-        "Operations teams were relying on lagging reports and manual exports to make weekly stock allocation decisions across locations.",
-      approach:
-        "Prepared demand signals in Python, pushed clean aggregates to a BI model, and designed a dashboard focused on forecast variance and replenishment risk.",
-      outcome:
-        "Improved visibility into inventory pressure points and supported more consistent weekly planning conversations.",
-      tags: ["Python", "Forecasting", "Dashboarding", "Operations Analytics"],
-      links: [
-        {
-          label: "GitHub repository",
-          href: "https://github.com/your-username/retail-demand-dashboard",
-        },
-        {
-          label: "Case study",
-          href: "https://your-case-study-link.example.com/retail-demand",
-        },
-      ],
-    },
-    {
-      title: "Support Ticket Topic Modeling",
-      summary:
-        "A text analytics project that summarized recurring support pain points from thousands of open-ended ticket descriptions.",
-      problem:
-        "Customer support leads had volume metrics, but lacked a scalable way to understand what issues were actually driving contact demand.",
-      approach:
-        "Cleaned ticket text, clustered related themes, and paired topic-level volume trends with examples that non-technical stakeholders could interpret quickly.",
-      outcome:
-        "Surfaced the most common support themes and provided a data-backed shortlist of product and process issues to investigate first.",
-      tags: ["NLP", "Python", "Topic Modeling", "Text Analytics"],
-      links: [
-        {
-          label: "GitHub repository",
-          href: "https://github.com/your-username/support-ticket-topic-modeling",
-        },
-      ],
+        "Generated submission-ready interval forecasts and summarized results for operations planning in a 36-hour datathon setting.",
+      tags: ["Data Science", "Python", "AWS SageMaker AI", "Forecasting"],
+      links: [],
     },
   ],
   contactLead:
