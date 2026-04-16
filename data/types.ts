@@ -23,6 +23,7 @@ export type AboutContent = {
   intro: string;
   paragraphs: string[];
   capabilities: string[];
+  funFacts: string[];
   principles: string[];
 };
 

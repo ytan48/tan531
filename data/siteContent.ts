@@ -50,6 +50,11 @@ export const siteContent: SiteContent = {
       "Machine Learning",
       "Statistical Analysis / Modeling",
     ],
+    funFacts: [
+      "I can speak both Cantonese and Mandarin.",
+      "I am based in Chicago.",
+      "Outside of analytics, I enjoy playing billiards.",
+    ],
     principles: [
       "Start with the decision, not the chart.",
       "Prefer interpretable methods when they are good enough.",
@@ -76,7 +81,7 @@ export const siteContent: SiteContent = {
   experience: [
     {
       role: "Data Analyst Intern",
-      organization: "IDXExchange",
+      organization: "IDX Exchange",
       period: "March, 2026 - Present",
       location: "Champaign, IL | Remote",
       summary: "",
@@ -134,8 +139,8 @@ export const siteContent: SiteContent = {
         "Led a Data Dive team in a credit risk analytics engagement focused on identifying country-level credit overheating risk in a global macro-risk monitoring context. Club involvement focused on machine learning, Scikit-learn, pandas, and Python.",
     },
     {
-      title: "Datathon Participant",
-      organization: "Illinois Statistics Datathon",
+      title: "Team024 Data Crucher",
+      organization: "Illinois Statistics Datathon 2026",
       period: "March 28-29, 2026",
       description:
         "Participated in a 36-hour datathon using AWS SageMaker JupyterLab and Python to predict 30-minute interval metrics for August 2025 call volume, customer care time, and abandoned rate.",

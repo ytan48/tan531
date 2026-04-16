@@ -133,6 +133,21 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+
+                <details className={styles.funFactsPanel}>
+                  <summary className={styles.funFactsSummary}>
+                    <span className={styles.funFactsEyebrow}>Fun facts</span>
+                    <span className={styles.funFactsPrompt}>A few things beyond data</span>
+                  </summary>
+
+                  <ul className={styles.funFactsList}>
+                    {about.funFacts.map((fact) => (
+                      <li key={fact} className={styles.funFactsItem}>
+                        {fact}
+                      </li>
+                    ))}
+                  </ul>
+                </details>
               </aside>
             </div>
           </FadeInSection>

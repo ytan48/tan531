@@ -588,6 +588,80 @@
   background: #ffffff;
 }
 
+.funFactsPanel {
+  margin-top: 22px;
+  border-top: 1px solid rgba(15, 39, 71, 0.08);
+  padding-top: 18px;
+}
+
+.funFactsSummary {
+  display: grid;
+  gap: 6px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.funFactsSummary::-webkit-details-marker {
+  display: none;
+}
+
+.funFactsEyebrow {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.funFactsPrompt {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.funFactsPrompt::after {
+  content: "+";
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: transform 180ms ease;
+}
+
+.funFactsPanel[open] .funFactsPrompt::after {
+  transform: rotate(45deg);
+}
+
+.funFactsList {
+  display: grid;
+  gap: 10px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.funFactsItem {
+  position: relative;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-reading);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.funFactsItem::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.76);
+}
+
 .competencyDot {
   width: 12px;
   height: 12px;
