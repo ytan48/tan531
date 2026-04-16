@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { FadeInSection } from "@/components/FadeInSection";
@@ -262,9 +263,20 @@ export default function Home() {
               <h2 className={styles.sectionTitle}>Open to analyst and data science roles.</h2>
               <p className={styles.sectionDescription}>{siteContent.contactLead}</p>
               <div className={styles.ctaRow}>
-                <a className={styles.primaryButton} href={`mailto:${profile.email}`}>
-                  Email {profile.name}
-                </a>
+                <div className={styles.contactCtaGroup}>
+                  <a className={styles.primaryButton} href={`mailto:${profile.email}`}>
+                    Email {profile.name}
+                  </a>
+                  <div className={styles.pixelCatBadge} aria-hidden="true">
+                    <Image
+                      src="/contact/pixel-cat.svg"
+                      alt=""
+                      width={48}
+                      height={48}
+                      className={styles.pixelCatImage}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
