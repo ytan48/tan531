@@ -17,6 +17,7 @@ const navItems = [
 ];
 
 export default function Home() {
+  const staticBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   const {
     profile,
     about,
@@ -269,7 +270,7 @@ export default function Home() {
                   </a>
                   <div className={styles.pixelCatBadge} aria-hidden="true">
                     <Image
-                      src="/contact/pixel-cat.svg"
+                      src={`${staticBasePath}/contact/pixel-cat.svg`}
                       alt=""
                       width={48}
                       height={48}
