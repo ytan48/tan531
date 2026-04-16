@@ -31,13 +31,16 @@ function getPreviewVariant(project: ProjectItem) {
 export function ProjectCard({ project }: ProjectCardProps) {
   const previewVariant = getPreviewVariant(project);
   const hasPreviewImage = Boolean(project.previewImage);
+  const imageSrc = project.previewImage?.startsWith("http")
+    ? project.previewImage
+    : `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${project.previewImage ?? ""}`;
 
   return (
     <article className={styles.card}>
       {hasPreviewImage ? (
         <div className={styles.previewImageFrame}>
           <Image
-            src={project.previewImage!}
+            src={imageSrc}
             alt={`${project.title} preview`}
             fill
             className={styles.previewImage}
